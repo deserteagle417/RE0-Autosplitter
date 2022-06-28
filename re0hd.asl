@@ -49,12 +49,9 @@ startup
 
 	vars.EventSettings = new List<String>()
 	{"Scorpion", "Clock", "Center 1", "Rebecca Saved", "Underground", "Center 2", "Bat", "Cage Hunters", "Labratory", "Tyrant 1", "Crates", "Tyrant 2", "Treatment Plant", "Queen Leech 1"};
-
-	//Description
-	settings.Add("disc", true, "The end of game split is always active.");
 	
 	//Event Split Options
-	settings.Add("event", true, "Event Splits (Check below which events to split on. Hover for tooltip with explanation of split.)");
+	settings.Add("event", false, "Event Splits (Check below which events to split on. Hover for tooltip with explanation of split.)");
         settings.CurrentDefaultParent = "event";
 		for(int i = 0; i < 14; i++){
         	settings.Add("" + vars.EventSettingsValues[i].ToString(), false, "" + vars.EventSettings[i].ToString());
@@ -76,11 +73,11 @@ startup
         settings.CurrentDefaultParent = null;
     
     //Cutscene Split Options
-	settings.Add("cutscene", true, "Cutscene Splits (Check below which cutscenes to split on)");
+	settings.Add("cutscene", false, "Cutscene Splits (Check below which cutscenes to split on)");
         settings.CurrentDefaultParent = "cutscene";
-		settings.Add("Train", true, "Train (Will not function with door splits active.)");
+		settings.Add("Train", false, "Train (Will not function with door splits active.)");
 		settings.SetToolTip("Train", "Splits after train brake is pulled.");
-		settings.Add("Centi", true, "Centipede");
+		settings.Add("Centi", false, "Centipede");
 		settings.SetToolTip("Centi", "Splits on centipede death cutscene.");
         settings.CurrentDefaultParent = null;
 
@@ -110,6 +107,20 @@ startup
         settings.Add("Basic", false, "Basic Door Splits");
         settings.SetToolTip("Basic", "Splits on every door transition.");
         settings.CurrentDefaultParent = null;
+
+	if (timer.CurrentTimingMethod == TimingMethod.RealTime)
+    {        
+        var timingMessage = MessageBox.Show (
+            "This game uses In-Game Time (IGT) as the timing method.\n"+
+            "LiveSplit is currently set to show Real Time (RTA).\n"+
+            "Would you like to set the timing method to Game Time? This will make verification easier.",
+            "LiveSplit | Resident Evil Zero",
+            MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+        if (timingMessage == DialogResult.Yes)
+        {
+            timer.CurrentTimingMethod = TimingMethod.GameTime;
+        }
+    }
 }
 
 init
@@ -261,23 +272,6 @@ init
 		Tuple.Create(155, 156, 215), Tuple.Create(156, 157, 216), Tuple.Create(157, 161, 217), Tuple.Create(161, 162, 218), Tuple.Create(162, 174, 219), //220
 		Tuple.Create(174, 164, 220), Tuple.Create(164, 173, 221), Tuple.Create(173, 165, 222)
     };
-}
-
-startup
-{
-	if (timer.CurrentTimingMethod == TimingMethod.RealTime)
-    {        
-        var timingMessage = MessageBox.Show (
-            "This game uses In-Game Time (IGT) as the timing method.\n"+
-            "LiveSplit is currently set to show Real Time (RTA).\n"+
-            "Would you like to set the timing method to Game Time? This will make verification easier.",
-            "LiveSplit | Resident Evil Zero",
-            MessageBoxButtons.YesNo,MessageBoxIcon.Question);
-        if (timingMessage == DialogResult.Yes)
-        {
-            timer.CurrentTimingMethod = TimingMethod.GameTime;
-        }
-    }
 }
 
 update
