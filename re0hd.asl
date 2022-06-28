@@ -443,7 +443,7 @@ split
 	    	}
 		}
 		//Box Reload
-		if((settings["NGDS"] && vars.doorIterator == 130) || (settings["NGPDS"] && vars.doorIterator == 132))
+		if((settings["NGDS"] && vars.doorIterator == 131) || (settings["NGPDS"] && vars.doorIterator == 133))
 		{
 			if(old.roomIdNext != current.roomIdNext && vars.boxReload < 2)
 	    	{

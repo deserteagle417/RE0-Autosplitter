@@ -10,6 +10,8 @@ There are five routes available in the door splitter:
 * A basic door splitter that will split on every door transition. (These will split on doors even if you misroute, so use at your own 
 discretion. This option might be interesting to you if you are doing a non-standard route.)
 
+Door Splitter routes are based off of the current fastest known routes. See Pessimism's runs for reference.
+
 The Door Skip versions include splits for exiting and re-entering the scorpion room (NG+/WM) and the outside box pushing room (NG & NG+/WM).
 
 Note that Event Splits and the Train cutscene split will not function if door splits are used. This is to prevent double splitting.
