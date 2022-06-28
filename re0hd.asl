@@ -6,7 +6,7 @@ some of the ideas here with the FF7R ASL script as well as contributions to this
 particular the item splitter.
 Tnanks to Mogul for testing several early drafts. Thanks to Keys for testing the later drafts 
 and for doing a run so I could track room IDs along the route. Thanks to Pessimism for testing 
-the pre-release version.
+the pre-release version and giving some route feedback.
 */
 
 state("re0hd")
@@ -37,11 +37,12 @@ startup
 	{"Scorp", "Clock", "Event36", "Event91", "Event90", "Event43", "Event100", "Hntrs", "Event111", "Event134", "Crate", "Event160", "Event174", "Event164"};
 
 	vars.KeyItemSettings = new List<String>()
-	{"Magnum Revolver (NG+)", "Dining Car Key", "Conductors Key", "Ice Pick", "Panel Opener", "Briefcase", "Gold Ring", "Hookshot", "Jewelery Box", "Silver Ring", "Blue Keycard", "Magnetic Card", 
-	 "Crank Handle", "Shotgun", "Black Statue", "Grenade Launcher", "White Statue", "Fire Key", "Lighter Fluid", "Microfilm A", "Book of Good", "Iron Needle", "Angel Wings", "Statue of Good", "Microfilm B",
-	 "MO Disk", "Book of Evil", "Black Wing", "Statue of Evil", "Water Key", "Unity Tablet", "Vise Handle", "Obedience Tablet", "Battery", "Discipline Tablet", "Leech Capsule", "Blue Leech Charm",
-	 "Input Reg. Coil", "Green Leech Charm", "Sterlizing Agent", "Breeding Room Key", "Dial", "Output Reg. Coil", "Magnum (NG)", "Up Key", "Elevator Key", "Handle", "Motherboard", "Empty Battery",
-	 "Industrial Water", "Hi-Power Battery", "Keycard", "Shaft Key (L)", "Shaft Key (R)"};
+	{"Magnum Revolver (NG+)", "Dining Car Key", "Conductors Key", "Ice Pick", "Panel Opener", "Briefcase", "Gold Ring", "Hookshot", "Jewelery Box", "Silver Ring", 
+	 "Blue Keycard", "Magnetic Card", "Crank Handle", "Shotgun", "Black Statue", "Grenade Launcher", "White Statue", "Fire Key", "Lighter Fluid", "Microfilm A", 
+	 "Book of Good", "Iron Needle", "Angel Wings", "Statue of Good", "Microfilm B", "MO Disk", "Book of Evil", "Black Wing", "Statue of Evil", "Water Key", 
+	 "Unity Tablet", "Vise Handle", "Obedience Tablet", "Battery", "Discipline Tablet", "Leech Capsule", "Blue Leech Charm", "Input Reg. Coil", "Green Leech Charm", "Sterlizing Agent", 
+	 "Breeding Room Key", "Dial", "Output Reg. Coil", "Magnum (NG)", "Up Key", "Elevator Key", "Handle", "Motherboard", "Empty Battery", "Industrial Water", 
+	 "Hi-Power Battery", "Keycard", "Shaft Key (L)", "Shaft Key (R)"};
 
 	vars.KeyWeaponSettings = new List<String>()
 	{"Hunting Gun", "Custom Handgun (Billy)", "Custom Handgun (Rebecca)"};

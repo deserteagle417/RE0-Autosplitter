@@ -2,11 +2,15 @@
 
 ## Door Splits
 
-There are three routes available in the door splitter:
+There are five routes available in the door splitter:
 * New Game
+* New Game with Door Skip
 * New Game + & Wesker Mode
+* New Game + & Wesker Mode with Door Skip
 * A basic door splitter that will split on every door transition. (These will split on doors even if you misroute, so use at your own 
 discretion. This option might be interesting to you if you are doing a non-standard route.)
+
+The Door Skip versions include splits for exiting and re-entering the scorpion room (NG+/WM) and the outside box pushing room (NG & NG+/WM).
 
 Note that Event Splits and the Train cutscene split will not function if door splits are used. This is to prevent double splitting.
 
