@@ -468,6 +468,11 @@ gameTime
     return TimeSpan.FromSeconds(current.time / 30);
 }
 
+isLoading
+{
+    return true;
+}
+
 reset
 {
 	return(current.time <= old.time && current.cutsceneId != 8187 && current.menuId == 24 && current.roomIdNext == 0 && current.roomIdCur != 0);
