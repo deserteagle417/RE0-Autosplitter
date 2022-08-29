@@ -34,7 +34,7 @@ startup
 	{5, 17, 19};
 
 	vars.EventSettingsValues = new List<String>()
-	{"Scorp", "Clock", "Event36", "Event91", "Event90", "Event43", "Event100", "Hntrs", "Event111", "Event134", "Crate", "Event160", "Event174", "Event164"};
+	{"Scorp", "Clock", "Event36", "Event91", "Event90", "Event43", "Bat", "Hntrs", "Event111", "Event134", "Crate", "Event160", "Event174", "Event164"};
 
 	vars.KeyItemSettings = new List<String>()
 	{"Magnum Revolver (NG+)", "Dining Car Key", "Conductors Key", "Ice Pick", "Panel Opener", "Briefcase", "Gold Ring", "Hookshot", "Jewelery Box", "Silver Ring", 
@@ -62,7 +62,7 @@ startup
 		settings.SetToolTip("Event91", "Splits upon leaving room after saving Rebecca.");
 		settings.SetToolTip("Event90", "Splits upon leaving the underground from the 6 animal torch room.");
 		settings.SetToolTip("Event43", "Splits upon exiting the training center toward the church.");
-		settings.SetToolTip("Event100", "Splits upon using hookshot after bat fight.");
+		settings.SetToolTip("Bat", "Splits upon using hookshot after bat fight.");
 		settings.SetToolTip("Hntrs", "Splits upon leaving room after getting dial. Will only split if you have the dial (either character).");
 		settings.SetToolTip("Event111", "Splits upon exiting tram after riding it.");
 		settings.SetToolTip("Event134", "Splits upon entering elevator after first Tyrant fight.");
@@ -137,10 +137,10 @@ init
 
     //Event splits
     vars.eventsCur = new List<int>()
-    {36, 91, 90, 43, 100, 111, 134, 160, 174, 164};
+    {36, 91, 90, 43, 111, 134, 160, 174, 164};
 
     vars.eventsNext = new List<int>()
-    {86, 90, 42, 99, 101, 132, 166, 159, 164, 173};
+    {86, 90, 42, 99, 132, 166, 159, 164, 173};
 
 	//NG Door Splits
     vars.NGDoors = new List<Tuple<int, int, int>>
@@ -374,6 +374,14 @@ split
 			    	return true;
 			    }
 		    }
+        }
+		else if(current.roomIdCur == 100 && settings["Bat"] && !vars.completedSplits.Contains("Bat"))
+        {
+            if(current.roomIdNext == 101)
+			{
+				vars.completedSplits.Add("Bat");
+				return true;
+			}
         }
         else if(current.roomIdCur == 109 && settings["Hntrs"] && !vars.completedSplits.Contains("Hntrs"))
         {
