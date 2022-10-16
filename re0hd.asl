@@ -51,8 +51,9 @@ startup
 	vars.EventSettings = new List<String>()
 	{"Scorpion", "Clock", "Center 1", "Rebecca Saved", "Underground", "Center 2", "Bat", "Cage Hunters", "Labratory", "Tyrant 1", "Crates", "Tyrant 2", "Treatment Plant", "Queen Leech 1"};
 	
+	settings.Add("tooltip", false, "Hover over splits below for further information.");
 	//Event Split Options
-	settings.Add("event", false, "Event Splits (Check below which events to split on. Hover for tooltip with explanation of split.)");
+	settings.Add("event", false, "Event Splits (Check below which events to split on)");
         settings.CurrentDefaultParent = "event";
 		for(int i = 0; i < 14; i++){
         	settings.Add("" + vars.EventSettingsValues[i].ToString(), false, "" + vars.EventSettings[i].ToString());
