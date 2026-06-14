@@ -7,17 +7,18 @@ particular the item splitter.
 Tnanks to Mogul for testing several early drafts. Thanks to Keys for testing the later drafts 
 and for doing a run so I could track room IDs along the route. Thanks to Pessimism for testing 
 the pre-release version and giving some route feedback.
+Updated for 2025 patch by descawed
 */
 
 state("re0hd")
 {
-	float time     : 0x9CDE9C, 0x3C;
-	int roomIdCur  : 0x9CE070, 0x1FD4;
-	int roomIdNext : 0x9CDEB8, 0x20;
-	int cutsceneId : 0x9CE008, 0x20;
-	byte menuId    : 0xA31688, 0x94, 0x14, 0x88, 0x14, 0xC;
+	float time     : 0x9CBE9C, 0x3C;
+	int roomIdCur  : 0x9CC070, 0x1FD4;
+	int roomIdNext : 0x9CBEB8, 0x20;
+	int cutsceneId : 0x9CC008, 0x20;
+	byte menuId    : 0xA2F688, 0x94, 0x14, 0x88, 0x14, 0xC;
 	//byte menuId    : 0xA2F414, 0xD74, 0x14, 0x8, 0x34, 0xC, 0x47C;
-	int activeHP   : 0x9CDF3C, 0x2C, 0x1030;
+	int activeHP   : 0x9CBF3C, 0x2C, 0x1030;
 }
 
 startup
@@ -291,8 +292,8 @@ update
 	//Iterate through the inventory slots to return their values
 	for(int i = 0; i < 6; i++)
 	{
-        current.InventoryBilly[i] = new DeepPointer(0x9CDF44, 0x64 + (i * 0x8)).Deref<byte>(game);
-        current.InventoryRebecca[i] = new DeepPointer(0x9CDF44, 0x24 + (i * 0x8)).Deref<byte>(game);
+        current.InventoryBilly[i] = new DeepPointer(0x9CBF44, 0x64 + (i * 0x8)).Deref<byte>(game);
+        current.InventoryRebecca[i] = new DeepPointer(0x9CBF44, 0x24 + (i * 0x8)).Deref<byte>(game);
     }
 
 	//Uncomment debug information in the event of an update.
